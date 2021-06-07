@@ -24,11 +24,12 @@ def predict():
     if request.method == "POST":
         f = request.files['audio_data']
         with open('audio.wav', 'wb') as audio:
-            model.predict(audio)
+            result  = model.predict(audio)
             f.save(audio)
         print('file uploaded successfully')
 
-        return render_template('index.html', request="POST")
+        # return render_template('index.html', request="POST")
+        return str(result)
     else:
         return render_template("index.html")
 
