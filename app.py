@@ -24,10 +24,9 @@ def predict():
     # return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
     if request.method == "POST":
         f = request.files['recording']
-        with open('recording.wav', 'wb') as audio:
-            result  = model.predict(audio)
+        f.save('recording.wav')
+        result  = model.predict('recording.wav')
             # result = 5.6
-            # f.save(audio)
         print('file uploaded successfully\n')
 
         # return render_template('index.html', request="POST")

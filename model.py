@@ -20,5 +20,6 @@ def predict(recording):
     prediction = model(spectrogram)
     prediction =tf.nn.softmax(prediction[0])
 
-    for i in range(30):
-        print(prediction)
+    print(prediction)
+
+    return float(prediction[0])
