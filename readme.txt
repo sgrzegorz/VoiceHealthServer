@@ -1,2 +1,2 @@
 heroku login
-heroku log --app nazwa-apki
+heroku logs --app voicehealthserver
