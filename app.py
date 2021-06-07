@@ -4,6 +4,7 @@ import pickle
 import model
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 @app.route('/')
 def home():
@@ -27,6 +28,7 @@ def predict():
             result  = model.predict(audio)
             f.save(audio)
         print('file uploaded successfully')
+        sys.stdout.flush()
 
         # return render_template('index.html', request="POST")
         return str(result)
