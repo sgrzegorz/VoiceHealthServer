@@ -3,7 +3,7 @@ import tensorflow as tf
 
 def predict(recording):
 
-    model = tf.keras.models.load_model('my_model')
+    model = tf.keras.models.load_model('my_model.h5')
     # recording = '/content/real_recording/healthy/recording.wav'
 
     audio_binary = tf.io.read_file(recording)
